@@ -1,0 +1,1 @@
+# FSharp Azure Function Template
