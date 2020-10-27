@@ -9,7 +9,8 @@ open Microsoft.Azure.WebJobs.Extensions.Http
 module Functions =
 
     [<FunctionName("HelloWorld")>]
-    let HelloWorld ([<HttpTrigger(AuthorizationLevel.Function, "get", Route = null)>] request: HttpRequest) (logger: ILogger) =
-        logger.LogInformation("Executing HelloWorld function...")
-
-        OkObjectResult("Hello World.") :> IActionResult 
+    let HelloWorld 
+        ([<HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)>] request : HttpRequest) 
+        (logger : ILogger) =
+        
+        OkObjectResult("Hello World!") :> IActionResult 
